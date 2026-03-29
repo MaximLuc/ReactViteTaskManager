@@ -1,0 +1,333 @@
+:root {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #112218;
+  background:
+    radial-gradient(circle at top left, rgba(231, 199, 94, 0.45), transparent 30%),
+    linear-gradient(135deg, #f7f3e9 0%, #eef7ee 45%, #dff1ea 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.background-shape {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0.55;
+}
+
+.background-shape-left {
+  top: -110px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  background: #d8ec7d;
+}
+
+.background-shape-right {
+  right: -70px;
+  bottom: 40px;
+  width: 240px;
+  height: 240px;
+  background: #8dd4bb;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 48px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(17, 34, 24, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 252, 245, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 45px rgba(60, 74, 49, 0.12);
+}
+
+.hero h1,
+.section-heading h2,
+.empty-state h2,
+.habit-content h3 {
+  margin: 0;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #6a6f2a;
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: #425346;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.stat-card,
+.panel,
+.habit-card,
+.empty-state {
+  border: 1px solid rgba(17, 34, 24, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 16px 30px rgba(69, 84, 55, 0.08);
+}
+
+.stat-card {
+  min-height: 132px;
+  padding: 20px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card span {
+  color: #5f6758;
+}
+
+.stat-card strong {
+  font-size: 2.2rem;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.panel {
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.panel-form {
+  display: grid;
+  gap: 24px;
+  align-self: start;
+}
+
+.habit-form,
+.filters,
+.edit-panel {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #324437;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(39, 62, 49, 0.12);
+  border-radius: 16px;
+  background: rgba(252, 251, 246, 0.92);
+  color: #112218;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(121, 162, 74, 0.35);
+  border-color: #79a24a;
+}
+
+.primary-button,
+.filter-buttons button,
+.habit-actions button {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 16px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #6e913f, #38644a);
+  color: #fffdf7;
+  font-weight: 700;
+}
+
+.primary-button:hover,
+.filter-buttons button:hover,
+.habit-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-buttons button,
+.habit-actions button {
+  background: #edf2e5;
+  color: #1e3527;
+}
+
+.filter-active {
+  background: #1f5b44 !important;
+  color: #ffffff !important;
+}
+
+.habit-list {
+  display: grid;
+  gap: 16px;
+}
+
+.habit-card {
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.habit-done {
+  background: rgba(231, 247, 236, 0.95);
+}
+
+.habit-card-top,
+.habit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.habit-card-top {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge,
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.badge {
+  background: #f0e8c7;
+  color: #64510d;
+}
+
+.status {
+  background: #eef2e8;
+  color: #47604d;
+}
+
+.status-done {
+  background: #d9f0dc;
+  color: #1f6a2d;
+}
+
+.habit-content {
+  margin: 18px 0;
+}
+
+.habit-content p {
+  margin: 8px 0 0;
+  color: #506055;
+}
+
+.danger-button {
+  background: #fbe2df !important;
+  color: #8b342c !important;
+}
+
+.empty-state {
+  padding: 44px 24px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.empty-state p:last-child {
+  margin-bottom: 0;
+  color: #506055;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    width: min(100% - 20px, 1180px);
+    padding-top: 20px;
+  }
+
+  .hero,
+  .panel,
+  .habit-card,
+  .empty-state {
+    border-radius: 22px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .habit-actions {
+    display: grid;
+  }
+}
