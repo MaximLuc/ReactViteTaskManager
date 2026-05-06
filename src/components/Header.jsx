@@ -1,4 +1,4 @@
-function Header({ total, completed }) {
+function Header({ total, completed, active }) {
   return (
     <header className="hero">
       <div>
@@ -6,7 +6,7 @@ function Header({ total, completed }) {
         <h1>Focus Flow</h1>
         <p className="hero-text">
           Трекер привычек и задач с добавлением, редактированием, удалением,
-          поиском и фильтрацией.
+          поиском, фильтрацией, API-загрузкой и несколькими страницами.
         </p>
       </div>
 
@@ -18,6 +18,10 @@ function Header({ total, completed }) {
         <article className="stat-card">
           <span>Выполнено</span>
           <strong>{completed}</strong>
+        </article>
+        <article className="stat-card">
+          <span>Активно</span>
+          <strong>{active}</strong>
         </article>
       </div>
     </header>

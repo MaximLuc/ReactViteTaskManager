@@ -1,5 +1,12 @@
-const categoryOptions = ["Учёба", "Здоровье", "Развитие", "Работа", "Личное"];
-const frequencyOptions = [
+export const categoryOptions = [
+  "Учеба",
+  "Здоровье",
+  "Развитие",
+  "Работа",
+  "Личное",
+];
+
+export const frequencyOptions = [
   "Каждый день",
   "5 раз в неделю",
   "3 раза в неделю",

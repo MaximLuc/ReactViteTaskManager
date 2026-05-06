@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { categoryOptions, frequencyOptions } from "./HabitForm.jsx";
 
 function HabitItem({ habit, onToggle, onDelete, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -44,16 +45,26 @@ function HabitItem({ habit, onToggle, onDelete, onUpdate }) {
             value={editedTitle}
             onChange={(event) => setEditedTitle(event.target.value)}
           />
-          <input
-            type="text"
+          <select
             value={editedCategory}
             onChange={(event) => setEditedCategory(event.target.value)}
-          />
-          <input
-            type="text"
+          >
+            {categoryOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <select
             value={editedFrequency}
             onChange={(event) => setEditedFrequency(event.target.value)}
-          />
+          >
+            {frequencyOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
       ) : (
         <div className="habit-content">
@@ -64,7 +75,9 @@ function HabitItem({ habit, onToggle, onDelete, onUpdate }) {
 
       <div className="habit-actions">
         <button type="button" onClick={() => onToggle(habit.id)}>
-          {habit.completed ? "Отметить как активную" : "Отметить выполненной"}
+          {habit.completed
+            ? "Вернуть в активные"
+            : "Отметить выполненной"}
         </button>
 
         {isEditing ? (
